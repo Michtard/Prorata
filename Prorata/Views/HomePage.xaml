@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:Prorata"
+             mc:Ignorable="d"
+             x:Class="Prorata.Views.HomePage">
+    <ContentPage.Content>
+        <StackLayout Margin="20,0" 
+                     HorizontalOptions="CenterAndExpand" 
+                     VerticalOptions="CenterAndExpand"
+                     Spacing="0">
+            <Image Source="images.png"
+                   Margin="0,0,0,15"
+                   HeightRequest="150"/>
+            <Frame HasShadow="False" 
+                   CornerRadius="10" 
+                   BorderColor="{StaticResource BorderColor}" 
+                   BackgroundColor="#F7F7F7">
+                <StackLayout>
+                    <Label Style="{StaticResource LableStyle}" 
+                           Text="Loyer" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry Style="{StaticResource EntryStyle}"
+                                              Text="{Binding Loyer, Mode=OneWayToSource}"
+                                              Keyboard="Numeric"/>
+                    </Frame>
+                    <Label Style="{StaticResource LableStyle}" 
+                           Text="Salaire 1" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry Style="{StaticResource EntryStyle}"
+                                              Text="{Binding Salaire1, Mode=OneWayToSource}"
+                                              Keyboard="Numeric"/>
+                    </Frame>
+                    <Label Style="{StaticResource LableStyle}" 
+                           Text="Salaire 2" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <controls:CustomEntry Style="{StaticResource EntryStyle}"
+                                              Text="{Binding Salaire2, Mode=OneWayToSource}"
+                                              Keyboard="Numeric"/>
+                    </Frame>
+                    <Button Margin="70,20" 
+                            BorderRadius="6" 
+                            WidthRequest="150" 
+                            TextColor="White" 
+                            Command="{Binding ResultatPageCommand}"
+                            BackgroundColor="{StaticResource LightGreenColor}" 
+                            Text="Calculer"></Button>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

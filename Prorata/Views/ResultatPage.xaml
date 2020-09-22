@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Prorata.Views.ResultatPage">
+    <ContentPage.Content>
+        <StackLayout Margin="30,0" 
+                     HorizontalOptions="CenterAndExpand" 
+                     VerticalOptions="CenterAndExpand"
+                     Spacing="0">
+            <Image Source="images.png"
+                   Margin="0,0,0,25"
+                   HeightRequest="150"/>
+            <Label Style="{StaticResource LableStyle}" 
+                   Text="Montant du Loyer par Salaire" 
+                   Margin="0,0,0,10"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+            <Frame HasShadow="False" 
+                   CornerRadius="10" 
+                   BorderColor="{StaticResource BorderColor}" 
+                   BackgroundColor="#F7F7F7">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="100" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Salaire 1"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="Large"/>
+                    <Label Text="{Binding Salaire1, Mode=TwoWay, StringFormat='{0:0} €'}"
+                           Margin="0,50,0,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+                    <Label Grid.Column="1"
+                           Text="Salaire 2"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="Large"/>
+                    <Label Text="{Binding Salaire2, Mode=TwoWay, StringFormat='{0:0} €'}"
+                           Grid.Column="1"
+                           Margin="0,50,0,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+                    <Label Grid.Row="1"
+                           Text="Loyer"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           FontSize="Large"/>
+                    <Label Text="{Binding Montant1, Mode=TwoWay, StringFormat='{0:0} €'}" 
+                           Grid.Row="1"
+                           Margin="0,50,0,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+                    <Label Grid.Column="1"
+                           Grid.Row="1"
+                           Text="Loyer"
+                           HorizontalOptions="Center"
+                           FontSize="Large"
+                           VerticalOptions="Center" />
+                    <Label Text="{Binding Montant2, Mode=TwoWay, StringFormat='{0:0} €'}"                           
+                           Grid.Column="1"
+                           Grid.Row="1"
+                           Margin="0,50,0,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+                </Grid>
+            </Frame>
+            <Button Margin="90,20" 
+                    BorderRadius="6" 
+                    WidthRequest="100" 
+                    TextColor="White" 
+                    Command="{Binding HomePageCommand}"
+                    BackgroundColor="{StaticResource LightGreenColor}" 
+                    Text="Retour"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
